@@ -1,0 +1,39 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MuslimInfoProvider",
+		"_postman_id": "a781a9a1-e122-a325-6d8c-11f7ff5335b5",
+		"description": "MuslimInfoProvider app APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get prayer times per year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{server_url}}/prayers/{{city_code}}",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"title\":\"Test\",\n   \"description\":\"Test Description\",\n   \"date\":\"2016-12-19T20:12:39.005\",\n   \"duration\":200,\n   \"capacity\":\"M\",\n   \"references\":\"ref\",\n   \"tags\":[\n     \"tag1\",\n     \"tag2\",\n     \"tag3\",\n     \"tag4\"\n   ],\n   \"image\":\"testImage\"\n}"
+				},
+				"description": "Gets a list of all available events"
+			},
+			"response": []
+		}
+	]
+}
